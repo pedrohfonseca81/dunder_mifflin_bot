@@ -1,0 +1,23 @@
+# Portuguese (Brazil) — automatic event messages
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "pretzel_day"
+msgstr "🥨 É O DIA DO PRETZEL. Stanley Hudson está experimentando algo que só pode ser descrito como alegria."
+
+msgid "end_shift"
+msgstr "🏠 É isso. Estou indo pra casa. Não me ligue. Não me procure. Estarei de volta amanhã, infelizmente."
+
+msgid "twss_response_1"
+msgstr "Foi o que ela disse! 😏"
+
+msgid "twss_response_2"
+msgstr "FOI O QUE ELA DISSE! 🎉"
+
+msgid "twss_response_3"
+msgstr "Ha! Foi o que ela disse."
+
+msgid "twss_response_4"
+msgstr "Opa opa - foi o que ela disse!"

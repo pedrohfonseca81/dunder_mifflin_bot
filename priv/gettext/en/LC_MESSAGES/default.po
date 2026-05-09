@@ -1,0 +1,32 @@
+# English — default messages
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "alliance_1"
+msgstr "🤝 **ALLIANCE PROPOSED** — %{target}, Dwight has selected you as a potential ally. Loyalty, secrecy, and beet-based compensation. Do you accept?"
+
+msgid "alliance_2"
+msgstr "📜 **SECRET ALLIANCE OFFER** — %{target}, I, Dwight K. Schrute, propose a strategic partnership. We will destroy our enemies together."
+
+msgid "alliance_3"
+msgstr "🥋 %{target}, your skills have been noted. I propose we combine forces. No one must know. Schrute Farms, dawn."
+
+msgid "vote_commentary_1"
+msgstr "Kevin votes for whichever one has more food."
+
+msgid "vote_commentary_2"
+msgstr "Stanley doesn't care. He's doing his crossword."
+
+msgid "vote_commentary_3"
+msgstr "Dwight says there is only one correct answer and those who disagree are wrong."
+
+msgid "vote_commentary_4"
+msgstr "Oscar has a detailed economic analysis but nobody asked."
+
+msgid "meeting_respond_prompt"
+msgstr "🎤 %{target}, it's your turn to speak! Click below to respond (60s)."
+
+msgid "help"
+msgstr "📋 **DUNDER MIFFLIN BOT — EMPLOYEE MANUAL**\n*Compiled by Toby Flenderson, HR Representative*\n\n**Character Commands** (cost SB)\n`/michael` `/dwight` `/jim` `/kevin` `/creed` `/stanley` `/toby` `/andy` `/oscar` `/angela`\n\n**Social** (cost SB)\n`/meeting` — Interactive meeting (15 SB)\n`/trial` — Put someone on trial (10 SB)\n`/dundie` — Give a Dundie Award (5 SB)\n`/alliance` — Propose a secret alliance (free)\n`/vote` — Start a poll (free)\n\n**Utility** (cost SB)\n`/summary` — Channel episode recap (8 SB)\n`/translate` — Translate + Oscar commentary (5 SB)\n`/reminder` — Scheduled reminder (3 SB)\n\n**Economy** (free)\n`/shift` — Daily salary (15 SB)\n`/balance` — Check your balance\n`/pay` — Transfer to another member\n`/store` — Buy Schrute Bucks packs\n`/profile` — Your employee file\n`/dashboard` — Server stats\n\n**Moderation** (free, requires permissions)\n`/warn` `/mute` `/timeout` `/kick` `/ban` `/logs` `/rules`\n\n**Admin**\n`/config` — Server settings"

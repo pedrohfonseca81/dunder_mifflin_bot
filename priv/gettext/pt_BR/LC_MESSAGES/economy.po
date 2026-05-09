@@ -1,0 +1,101 @@
+# Brazilian Portuguese — economy messages
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "shift_success_1"
+msgstr "☀️ Ponto batido! Michael fez um discurso motivacional de 45 minutos. Você ganhou **15 SB**. Saldo: **%{balance} SB**."
+
+msgid "shift_success_2"
+msgstr "🎉 Expediente concluído! Dwight te vigiou o tempo todo mas você recebeu. **+15 SB** | Saldo: **%{balance} SB**."
+
+msgid "shift_success_3"
+msgstr "📋 Ponto registrado! Você sobreviveu a mais um dia na Dunder Mifflin. **+15 SB** | Saldo: **%{balance} SB**."
+
+msgid "shift_already_claimed"
+msgstr "⏰ Você já bateu o ponto hoje. Próximo expediente em ~**%{hours}h**."
+
+msgid "insufficient_funds"
+msgstr "❌ Schrute Bucks insuficientes! Use `/expediente` para ganhar mais ou `/loja` para comprar."
+
+msgid "balance_display"
+msgstr "💵 **Schrute Bucks de %{user}:** **%{balance} SB**\n_Use `/loja` para comprar mais._"
+
+msgid "transfer_success"
+msgstr "✅ Transferido **%{amount} SB** para %{target}. Seu novo saldo: **%{balance} SB**."
+
+msgid "transfer_insufficient"
+msgstr "❌ Schrute Bucks insuficientes."
+
+msgid "store_header"
+msgstr "🏪 **LOJA DE SCHRUTE BUCKS** — Escolha um pacote:"
+
+msgid "donate_header"
+msgstr "☕ **APOIAR O BOT** — Escolha um valor de doação via PIX:"
+
+msgid "payment_link"
+msgstr "💰 Link de pagamento PIX: %{url}\nExpira em 30 minutos."
+
+msgid "donation_link"
+msgstr "❤️ Obrigado! Link PIX: %{url}"
+
+msgid "birthday_registered"
+msgstr "🎂 Aniversário registrado: **%{date}** (MM-DD). Angela está preparando o mínimo necessário."
+
+msgid "birthday_invalid"
+msgstr "❌ Formato inválido. Use DD/MM (ex: 25/12) ou MM-DD (ex: 12-25)."
+
+msgid "reminder_set"
+msgstr "⏰ Lembrete definido para %{target} em %{time}."
+
+msgid "config_updated"
+msgstr "✅ Configuração atualizada: `%{key}` = `%{value}`"
+
+msgid "rules_updated"
+msgstr "📋 Manual do Funcionário atualizado. O Michael não leu."
+
+msgid "rules_empty"
+msgstr "📋 Nenhum Manual do Funcionário definido. Use `/regras [conteúdo]` para configurar."
+
+msgid "meeting_called"
+msgstr "📢 **REUNIÃO OBRIGATÓRIA CONVOCADA**\nO Michael está se preparando... %{target} foi convocado sobre: **%{topic}**"
+
+msgid "summary_header"
+msgstr "📺 **NESTA SEMANA NO THE OFFICE**"
+
+msgid "translate_header"
+msgstr "🌍 **Tradução → %{language}**"
+
+msgid "dundie_header"
+msgstr "🏆 **OS DUNDIES**"
+
+msgid "profile_header"
+msgstr "📁 **FICHA DO FUNCIONÁRIO — %{user}**"
+
+msgid "profile_balance"
+msgstr "💵 Schrute Bucks: **%{balance} SB**"
+
+msgid "profile_warns"
+msgstr "⚠️ Avisos: **%{count}**"
+
+msgid "profile_trials"
+msgstr "⚖️ Processos: **%{count}**"
+
+msgid "profile_dundies"
+msgstr "🏆 Dundies: **%{count}**"
+
+msgid "profile_threat"
+msgstr "🎯 Nível de Ameaça: **%{level}**"
+
+msgid "dashboard_header"
+msgstr "📊 **DUNDER MIFFLIN — RELATÓRIO TRIMESTRAL**"
+
+msgid "dashboard_employee"
+msgstr "🏆 Funcionário do Mês: **%{user}**"
+
+msgid "dashboard_warned"
+msgstr "⚠️ Mais Advertido: **%{user}** (%{count} avisos)"
+
+msgid "dashboard_quote"
+msgstr "_\"Nossa filial está indo bem. Não a melhor, mas não a pior.\" — M. Scott_"

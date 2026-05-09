@@ -1,0 +1,23 @@
+# English — automatic event messages
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "pretzel_day"
+msgstr "🥨 IT'S PRETZEL DAY. Stanley Hudson is experiencing something that can only be described as joy."
+
+msgid "end_shift"
+msgstr "🏠 That's it. I'm going home. Don't call me. Don't look for me. I'll be back tomorrow, unfortunately."
+
+msgid "twss_response_1"
+msgstr "That's what she said! 😏"
+
+msgid "twss_response_2"
+msgstr "THAT'S WHAT SHE SAID! 🎉"
+
+msgid "twss_response_3"
+msgstr "Ha! That's what she said."
+
+msgid "twss_response_4"
+msgstr "Oh oh oh - THAT'S WHAT SHE SAID!"

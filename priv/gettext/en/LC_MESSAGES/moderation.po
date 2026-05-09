@@ -1,0 +1,44 @@
+# English — moderation messages
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "warn_1"
+msgstr "ATTENTION. I, Dwight K. Schrute, issue this formal warning to %{target}. You are on my list."
+
+msgid "warn_2"
+msgstr "Warning logged, %{target}. Consider yourself under my direct supervision."
+
+msgid "warn_3"
+msgstr "Infraction recorded against %{target}. Schrute Farms has stricter rules. You would not last a day."
+
+msgid "mute_1"
+msgstr "Per HR memo 7-B: %{target}'s communication privileges temporarily suspended. Duration: %{time}."
+
+msgid "mute_2"
+msgstr "I've filed the paperwork, %{target}. You are hereby silenced. This is not personal. It's policy."
+
+msgid "timeout_1"
+msgstr "I don't want to do this. I really don't. But %{target}... you leave me no choice. Timeout. This is so hard for me."
+
+msgid "timeout_2"
+msgstr "You know what? Fine. FINE. %{target}, timeout. I want you to know I'm not happy about this. Not at all."
+
+msgid "kick_1"
+msgstr "You are FIRED, %{target}! I always wanted to say that. Reason: %{reason}."
+
+msgid "kick_2"
+msgstr "%{target} has been removed from the branch. Michael is emotional about it. Nobody else is."
+
+msgid "ban_1"
+msgstr "By order of Dwight K. Schrute: %{target} permanently expelled. The perimeter is secure."
+
+msgid "ban_2"
+msgstr "BAN EXECUTED. %{target} has been neutralized. Reason: %{reason}. You're welcome, everyone."
+
+msgid "forbidden"
+msgstr "Dwight here. %{user} does not have clearance for that. Access DENIED."
+
+msgid "no_incidents"
+msgstr "📁 No incidents on file. Toby is somehow proud of this."

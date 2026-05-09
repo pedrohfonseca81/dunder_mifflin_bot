@@ -1,0 +1,101 @@
+# English — economy messages
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "shift_success_1"
+msgstr "☀️ You clocked in! Michael gave a 45-minute motivational speech. You earned **15 SB**. Balance: **%{balance} SB**."
+
+msgid "shift_success_2"
+msgstr "🎉 Shift complete! Dwight watched you the entire time but you got paid. **+15 SB** | Balance: **%{balance} SB**."
+
+msgid "shift_success_3"
+msgstr "📋 Punched in! You survived another day at Dunder Mifflin. **+15 SB** | Balance: **%{balance} SB**."
+
+msgid "shift_already_claimed"
+msgstr "⏰ Already clocked in today. Next shift in ~**%{hours}h**."
+
+msgid "insufficient_funds"
+msgstr "❌ Not enough Schrute Bucks! Use `/shift` to earn more or `/store` to buy."
+
+msgid "balance_display"
+msgstr "💵 **%{user}'s Schrute Bucks:** **%{balance} SB**\n_Use `/store` to buy more._"
+
+msgid "transfer_success"
+msgstr "✅ Transferred **%{amount} SB** to %{target}. Your new balance: **%{balance} SB**."
+
+msgid "transfer_insufficient"
+msgstr "❌ Insufficient Schrute Bucks."
+
+msgid "store_header"
+msgstr "🏪 **SCHRUTE BUCKS STORE** — Choose a pack:"
+
+msgid "donate_header"
+msgstr "☕ **SUPPORT THE BOT** — Choose a donation amount via PIX:"
+
+msgid "payment_link"
+msgstr "💰 PIX payment link: %{url}\nExpires in 30 minutes."
+
+msgid "donation_link"
+msgstr "❤️ Thank you! PIX link: %{url}"
+
+msgid "birthday_registered"
+msgstr "🎂 Birthday registered: **%{date}** (MM-DD). Angela is begrudgingly preparing something minimal."
+
+msgid "birthday_invalid"
+msgstr "❌ Invalid format. Use DD/MM (e.g. 25/12) or MM-DD (e.g. 12-25)."
+
+msgid "reminder_set"
+msgstr "⏰ Reminder set for %{target} in %{time}."
+
+msgid "config_updated"
+msgstr "✅ Config updated: `%{key}` = `%{value}`"
+
+msgid "rules_updated"
+msgstr "📋 Employee Manual updated. Michael has not read it."
+
+msgid "rules_empty"
+msgstr "📋 No Employee Manual set. Use `/rules [content]` to set one."
+
+msgid "meeting_called"
+msgstr "📢 **MANDATORY MEETING CALLED**\nMichael is preparing... %{target} has been summoned about: **%{topic}**"
+
+msgid "summary_header"
+msgstr "📺 **THIS WEEK ON THE OFFICE**"
+
+msgid "translate_header"
+msgstr "🌍 **Translation → %{language}**"
+
+msgid "dundie_header"
+msgstr "🏆 **THE DUNDIES**"
+
+msgid "profile_header"
+msgstr "📁 **EMPLOYEE FILE — %{user}**"
+
+msgid "profile_balance"
+msgstr "💵 Schrute Bucks: **%{balance} SB**"
+
+msgid "profile_warns"
+msgstr "⚠️ Warnings: **%{count}**"
+
+msgid "profile_trials"
+msgstr "⚖️ Trials: **%{count}**"
+
+msgid "profile_dundies"
+msgstr "🏆 Dundies: **%{count}**"
+
+msgid "profile_threat"
+msgstr "🎯 Threat Level: **%{level}**"
+
+msgid "dashboard_header"
+msgstr "📊 **DUNDER MIFFLIN — QUARTERLY REPORT**"
+
+msgid "dashboard_employee"
+msgstr "🏆 Employee of the Month: **%{user}**"
+
+msgid "dashboard_warned"
+msgstr "⚠️ Most Warned: **%{user}** (%{count} warns)"
+
+msgid "dashboard_quote"
+msgstr "_\"Our branch is doing great. Not the best, but not the worst.\" — M. Scott_"

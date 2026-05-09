@@ -1,0 +1,32 @@
+# Brazilian Portuguese — default messages
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "alliance_1"
+msgstr "🤝 **ALIANÇA PROPOSTA** — %{target}, Dwight te selecionou como aliado potencial. Os termos: lealdade, sigilo e compensação baseada em beterraba. Aceita?"
+
+msgid "alliance_2"
+msgstr "📜 **OFERTA DE ALIANÇA SECRETA** — %{target}, eu, Dwight K. Schrute, proponho uma parceria estratégica. Destruiremos nossos inimigos juntos."
+
+msgid "alliance_3"
+msgstr "🥋 %{target}, suas habilidades foram notadas. Proponho que unamos forças. Ninguém pode saber. Fazenda Schrute, ao amanhecer."
+
+msgid "vote_commentary_1"
+msgstr "Kevin vota por aquele que tiver mais comida."
+
+msgid "vote_commentary_2"
+msgstr "Stanley não liga. Ele está fazendo palavras cruzadas."
+
+msgid "vote_commentary_3"
+msgstr "Dwight diz que só há uma resposta correta e quem discorda está errado."
+
+msgid "vote_commentary_4"
+msgstr "Oscar tem uma análise econômica detalhada mas ninguém perguntou."
+
+msgid "meeting_respond_prompt"
+msgstr "🎤 %{target}, é sua vez de falar! Clique no botão abaixo para responder (60s)."
+
+msgid "help"
+msgstr "📋 **DUNDER MIFFLIN BOT — MANUAL DO FUNCIONÁRIO**\n*Compilado por Toby Flenderson, RH*\n\n**Personagens** (custam SB)\n`/michael` `/dwight` `/jim` `/kevin` `/creed` `/stanley` `/toby` `/andy` `/oscar` `/angela`\n\n**Social** (custam SB)\n`/reuniao` — Reunião interativa (15 SB)\n`/processar` — Colocar alguém no tribunal (10 SB)\n`/dundie` — Dar um Dundie Award (5 SB)\n`/aliancar` — Propor aliança secreta (grátis)\n`/votar` — Iniciar votação (grátis)\n\n**Utilitário** (custam SB)\n`/resumo` — Resumo do canal (8 SB)\n`/traduzir` — Traduzir + comentário do Oscar (5 SB)\n`/lembrete` — Lembrete agendado (3 SB)\n\n**Economia** (grátis)\n`/expediente` — Salário diário (15 SB)\n`/saldo` — Ver saldo\n`/pagar` — Transferir para outro membro\n`/loja` — Comprar pacotes de Schrute Bucks\n`/perfil` — Sua ficha de funcionário\n`/dashboard` — Estatísticas do servidor\n\n**Moderação** (grátis, requer permissões)\n`/warn` `/mute` `/timeout` `/kick` `/ban` `/logs` `/regras`\n\n**Admin**\n`/config` — Configurações do servidor"
