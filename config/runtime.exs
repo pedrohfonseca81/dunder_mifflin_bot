@@ -11,10 +11,10 @@ owners_ids =
   end)
 
 if config_env() in [:dev, :test] do
-  import Dotenvy
-
-  source!([".env", System.get_env()])
-  |> Enum.each(fn {k, v} -> System.put_env(k, v) end)
+  if Code.ensure_loaded?(Dotenvy) do
+    Dotenvy.source!([".env", System.get_env()])
+    |> Enum.each(fn {k, v} -> System.put_env(k, v) end)
+  end
 end
 
 if config_env() == :dev do
