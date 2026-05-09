@@ -167,12 +167,7 @@ defmodule DunderMifflinBot.Commands.Registry do
           }
         ]
       },
-      %{
-        name: "store",
-        description: "Buy Schrute Bucks packs",
-        name_localizations: %{"pt-BR" => "loja"},
-        description_localizations: %{"pt-BR" => "Comprar pacotes de Schrute Bucks"}
-      },
+
       %{
         name: "profile",
         description: "View employee file",
@@ -291,63 +286,7 @@ defmodule DunderMifflinBot.Commands.Registry do
         description_localizations: %{"pt-BR" => "Abrir painel de configurações"},
         default_member_permissions: "8"
       },
-      %{
-        name: "superadmin",
-        description: "Bot owner maintenance commands",
-        name_localizations: %{"pt-BR" => "superadmin"},
-        description_localizations: %{"pt-BR" => "Comandos de manutenção do dono do bot"},
-        default_member_permissions: "0",
-        dm_permission: false,
-        options: [
-          %{
-            type: 1,
-            name: "ping",
-            description: "Check superadmin access",
-            name_localizations: %{"pt-BR" => "ping"},
-            description_localizations: %{"pt-BR" => "Verificar acesso superadmin"}
-          },
-          %{
-            type: 1,
-            name: "sync_commands",
-            description: "Re-register all global slash commands",
-            name_localizations: %{"pt-BR" => "sync_comandos"},
-            description_localizations: %{"pt-BR" => "Re-registrar todos os comandos globais"}
-          },
-          %{
-            type: 1,
-            name: "owners",
-            description: "Show configured OWNERS_ID list",
-            name_localizations: %{"pt-BR" => "owners"},
-            description_localizations: %{"pt-BR" => "Mostrar a lista configurada em OWNERS_ID"}
-          },
-          %{
-            type: 1,
-            name: "grant_sb",
-            description: "Grant Schrute Bucks to a member",
-            name_localizations: %{"pt-BR" => "dar_sb"},
-            description_localizations: %{"pt-BR" => "Dar Schrute Bucks para um membro"},
-            options: [
-              %{
-                name: "person",
-                description: "Who receives Schrute Bucks",
-                name_localizations: %{"pt-BR" => "pessoa"},
-                description_localizations: %{"pt-BR" => "Quem recebe os Schrute Bucks"},
-                type: 6,
-                required: true
-              },
-              %{
-                name: "amount",
-                description: "Amount to grant",
-                name_localizations: %{"pt-BR" => "valor"},
-                description_localizations: %{"pt-BR" => "Quantidade a conceder"},
-                type: 4,
-                required: true,
-                min_value: 1
-              }
-            ]
-          }
-        ]
-      }
+
     ]
   end
 

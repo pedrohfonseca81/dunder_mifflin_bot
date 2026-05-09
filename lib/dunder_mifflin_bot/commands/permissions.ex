@@ -30,17 +30,7 @@ defmodule DunderMifflinBot.Commands.Permissions do
       else: {:error, :forbidden}
   end
 
-  def check(interaction, :superadmin) do
-    owners = Application.get_env(:dunder_mifflin_bot, :owners_ids, [])
 
-    user_id =
-      get_in(interaction, [Access.key(:member), Access.key(:user_id)]) ||
-        get_in(interaction, [Access.key(:user), Access.key(:id)])
-
-    if user_id in owners,
-      do: :ok,
-      else: {:error, :forbidden}
-  end
 
   def forbidden_reply(interaction) do
     locale = Servers.get_language(interaction.guild_id)

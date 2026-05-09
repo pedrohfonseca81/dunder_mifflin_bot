@@ -1,7 +1,7 @@
 defmodule DunderMifflinBot.Commands.Economy do
   use Gettext, backend: DunderMifflinBot.Gettext
 
-  alias DunderMifflinBot.Economy.{Wallet, Store}
+  alias DunderMifflinBot.Economy.Wallet
   alias DunderMifflinBot.{Members, Moderation}
   alias DunderMifflinBot.Commands.Router
   alias DunderMifflinBot.Characters.{Dwight, Michael}
@@ -76,23 +76,7 @@ defmodule DunderMifflinBot.Commands.Economy do
     end
   end
 
-  def handle_store(interaction, _locale) do
-    packs = Store.sb_packs()
 
-    components = [
-      %{
-        type: 1,
-        components: Enum.map(packs, fn pack ->
-          %{type: 2, style: 1, label: pack.label, custom_id: "store_#{pack.id}"}
-        end)
-      }
-    ]
-
-    Router.defer_ephemeral(interaction)
-    content = "📦 **Schrute Bucks Store**\n#{Enum.random(@dwight_store_lines)}"
-    Router.send_as_character(interaction.channel_id, Dwight, content, %{components: components})
-    Router.delete_response(interaction)
-  end
 
   def handle_profile(interaction, target_id, _locale) do
     server_id = interaction.guild_id

@@ -1,7 +1,7 @@
 defmodule DunderMifflinBot.Commands.Router do
   use Gettext, backend: DunderMifflinBot.Gettext
 
-  alias DunderMifflinBot.Commands.{Permissions, Moderation, Social, Utility, Economy, Superadmin}
+  alias DunderMifflinBot.Commands.{Permissions, Moderation, Social, Utility, Economy}
   alias DunderMifflinBot.Characters.Character
   alias DunderMifflinBot.Economy.Wallet
   alias DunderMifflinBot.{Servers, CharacterSession}
@@ -44,14 +44,12 @@ defmodule DunderMifflinBot.Commands.Router do
   end
 
   defp dispatch("toby", interaction, locale) do
-    with :ok <- Permissions.check(interaction, :everyone),
-         target = get_user_mention(interaction, "person"),
-         reason = get_option(interaction, "reason"),
-         {:ok, _} <- Wallet.debit(interaction.member.user_id, interaction.guild_id, 5, "toby") do
+    with :ok <- Permissions.check(interaction, :everyone) do
+      target = get_user_mention(interaction, "person")
+      reason = get_option(interaction, "reason")
       Utility.handle_toby(interaction, target, reason, locale)
     else
       {:error, :forbidden} -> reply_ephemeral(interaction, Permissions.forbidden_reply(interaction))
-      {:error, :insufficient_funds} -> reply_ephemeral(interaction, insufficient_funds_msg())
     end
   end
 
@@ -72,26 +70,22 @@ defmodule DunderMifflinBot.Commands.Router do
 
   # Social
   defp dispatch("meeting", interaction, locale) do
-    with :ok <- Permissions.check(interaction, :everyone),
-         target = get_user_id(interaction, "person"),
-         topic = get_option(interaction, "topic"),
-         {:ok, _} <- Wallet.debit(interaction.member.user_id, interaction.guild_id, 15, "meeting") do
+    with :ok <- Permissions.check(interaction, :everyone) do
+      target = get_user_id(interaction, "person")
+      topic = get_option(interaction, "topic")
       Social.handle_meeting(interaction, target, topic, locale)
     else
       {:error, :forbidden} -> reply_ephemeral(interaction, Permissions.forbidden_reply(interaction))
-      {:error, :insufficient_funds} -> reply_ephemeral(interaction, insufficient_funds_msg())
     end
   end
 
   defp dispatch("trial", interaction, locale) do
-    with :ok <- Permissions.check(interaction, :everyone),
-         target = get_user_id(interaction, "person"),
-         reason = get_option(interaction, "reason"),
-         {:ok, _} <- Wallet.debit(interaction.member.user_id, interaction.guild_id, 10, "trial") do
+    with :ok <- Permissions.check(interaction, :everyone) do
+      target = get_user_id(interaction, "person")
+      reason = get_option(interaction, "reason")
       Social.handle_trial(interaction, target, reason, locale)
     else
       {:error, :forbidden} -> reply_ephemeral(interaction, Permissions.forbidden_reply(interaction))
-      {:error, :insufficient_funds} -> reply_ephemeral(interaction, insufficient_funds_msg())
     end
   end
 
@@ -115,50 +109,42 @@ defmodule DunderMifflinBot.Commands.Router do
   end
 
   defp dispatch("dundie", interaction, locale) do
-    with :ok <- Permissions.check(interaction, :everyone),
-         target_id = get_user_id(interaction, "person"),
-         category = get_option(interaction, "category"),
-         {:ok, _} <- Wallet.debit(interaction.member.user_id, interaction.guild_id, 5, "dundie") do
+    with :ok <- Permissions.check(interaction, :everyone) do
+      target_id = get_user_id(interaction, "person")
+      category = get_option(interaction, "category")
       Social.handle_dundie(interaction, target_id, category, locale)
     else
       {:error, :forbidden} -> reply_ephemeral(interaction, Permissions.forbidden_reply(interaction))
-      {:error, :insufficient_funds} -> reply_ephemeral(interaction, insufficient_funds_msg())
     end
   end
 
   # Utility
   defp dispatch("summary", interaction, locale) do
-    with :ok <- Permissions.check(interaction, :everyone),
-         {:ok, _} <- Wallet.debit(interaction.member.user_id, interaction.guild_id, 8, "summary") do
+    with :ok <- Permissions.check(interaction, :everyone) do
       Utility.handle_summary(interaction, locale)
     else
       {:error, :forbidden} -> reply_ephemeral(interaction, Permissions.forbidden_reply(interaction))
-      {:error, :insufficient_funds} -> reply_ephemeral(interaction, insufficient_funds_msg())
     end
   end
 
   defp dispatch("translate", interaction, locale) do
-    with :ok <- Permissions.check(interaction, :everyone),
-         text = get_option(interaction, "text"),
-         language = get_option(interaction, "language"),
-         {:ok, _} <- Wallet.debit(interaction.member.user_id, interaction.guild_id, 5, "translate") do
+    with :ok <- Permissions.check(interaction, :everyone) do
+      text = get_option(interaction, "text")
+      language = get_option(interaction, "language")
       Utility.handle_translate(interaction, text, language, locale)
     else
       {:error, :forbidden} -> reply_ephemeral(interaction, Permissions.forbidden_reply(interaction))
-      {:error, :insufficient_funds} -> reply_ephemeral(interaction, insufficient_funds_msg())
     end
   end
 
   defp dispatch("reminder", interaction, locale) do
-    with :ok <- Permissions.check(interaction, :everyone),
-         target_id = get_user_id(interaction, "person"),
-         time_str = get_option(interaction, "time"),
-         message = get_option(interaction, "message"),
-         {:ok, _} <- Wallet.debit(interaction.member.user_id, interaction.guild_id, 3, "reminder") do
+    with :ok <- Permissions.check(interaction, :everyone) do
+      target_id = get_user_id(interaction, "person")
+      time_str = get_option(interaction, "time")
+      message = get_option(interaction, "message")
       Utility.handle_reminder(interaction, target_id, time_str, message, locale)
     else
       {:error, :forbidden} -> reply_ephemeral(interaction, Permissions.forbidden_reply(interaction))
-      {:error, :insufficient_funds} -> reply_ephemeral(interaction, insufficient_funds_msg())
     end
   end
 
@@ -187,9 +173,7 @@ defmodule DunderMifflinBot.Commands.Router do
   end
 
 
-  defp dispatch("store", interaction, locale) do
-    Economy.handle_store(interaction, locale)
-  end
+
 
   defp dispatch("profile", interaction, locale) do
     target_id = get_user_id(interaction, "person") || interaction.member.user_id
@@ -283,23 +267,7 @@ defmodule DunderMifflinBot.Commands.Router do
     end
   end
 
-  defp dispatch("superadmin", interaction, _locale) do
-    with :ok <- Permissions.check(interaction, :superadmin) do
-      case get_subcommand(interaction) do
-        "ping" -> Superadmin.handle_ping(interaction)
-        "sync_commands" -> Superadmin.handle_sync_commands(interaction)
-        "owners" -> Superadmin.handle_owners(interaction)
-        "grant_sb" ->
-          target_id = get_subcommand_option(interaction, "person")
-          amount = get_subcommand_option_integer(interaction, "amount")
-          Superadmin.handle_grant_sb(interaction, target_id, amount)
 
-        _ -> reply_ephemeral(interaction, "Unknown superadmin subcommand")
-      end
-    else
-      {:error, :forbidden} -> reply_ephemeral(interaction, Permissions.forbidden_reply(interaction))
-    end
-  end
 
   defp dispatch(unknown, interaction, _locale) do
     reply_ephemeral(interaction, "Unknown command: #{unknown}")
@@ -333,24 +301,20 @@ defmodule DunderMifflinBot.Commands.Router do
     "Angela"  => "https://static.wikia.nocookie.net/theoffice/images/0/0b/Angela_Martin.jpg/revision/latest/scale-to-width-down/1000?cb=20170701090232"
   }
 
-  defp run_character(interaction, character_module, context, command, locale) do
+  defp run_character(interaction, character_module, context, _command, locale) do
     user_id = interaction.member.user_id
-    server_id = interaction.guild_id
-    cost = character_module.cost()
 
     Nostrum.Api.Interaction.create_response(interaction, %{type: 5, data: %{flags: 64}})
 
     with :ok <- Permissions.check(interaction, :everyone),
-         {:ok, _} <- Wallet.debit(user_id, server_id, cost, command),
          {:ok, response} <- Character.generate(character_module, context, locale) do
       send_as_character(interaction.channel_id, character_module, response)
       CharacterSession.start_session(interaction.channel_id, user_id, character_module, locale, response)
       char_key = character_module |> Module.split() |> List.last()
       name = Map.get(@character_display_names, char_key, char_key)
-      edit_response(interaction, "💬 **#{name}** disponível por 1 minuto. Custo: 2 SB/mensagem.")
+      edit_response(interaction, "💬 **#{name}** disponível por 1 minuto.")
     else
       {:error, :forbidden} -> edit_response(interaction, Permissions.forbidden_reply(interaction))
-      {:error, :insufficient_funds} -> edit_response(interaction, insufficient_funds_msg())
       {:error, reason} -> edit_response(interaction, "Error: #{inspect(reason)}")
     end
   end
@@ -388,46 +352,78 @@ defmodule DunderMifflinBot.Commands.Router do
   end
 
   def defer(interaction) do
-    Nostrum.Api.Interaction.create_response(interaction, %{type: 5})
+    if Map.get(interaction, :mock) do
+      :ok
+    else
+      Nostrum.Api.Interaction.create_response(interaction, %{type: 5})
+    end
   end
 
   def defer_ephemeral(interaction) do
-    Nostrum.Api.Interaction.create_response(interaction, %{type: 5, data: %{flags: 64}})
+    if Map.get(interaction, :mock) do
+      :ok
+    else
+      Nostrum.Api.Interaction.create_response(interaction, %{type: 5, data: %{flags: 64}})
+    end
   end
 
   def delete_response(interaction) do
-    Nostrum.Api.Interaction.delete_response(interaction)
+    if Map.get(interaction, :mock) do
+      :ok
+    else
+      Nostrum.Api.Interaction.delete_response(interaction)
+    end
   end
 
   def edit_response(interaction, content) do
-    Nostrum.Api.Interaction.edit_response(interaction, %{content: content})
+    if Map.get(interaction, :mock) do
+      Nostrum.Api.Message.create(interaction.channel_id, content)
+    else
+      Nostrum.Api.Interaction.edit_response(interaction, %{content: content})
+    end
   end
 
   def reply(interaction, content) do
-    Nostrum.Api.Interaction.create_response(interaction, %{
-      type: 4,
-      data: %{content: content}
-    })
+    if Map.get(interaction, :mock) do
+      Nostrum.Api.Message.create(interaction.channel_id, content)
+    else
+      Nostrum.Api.Interaction.create_response(interaction, %{
+        type: 4,
+        data: %{content: content}
+      })
+    end
   end
 
   def reply_ephemeral(interaction, content) do
-    Nostrum.Api.Interaction.create_response(interaction, %{
-      type: 4,
-      data: %{content: content, flags: 64}
-    })
+    if Map.get(interaction, :mock) do
+      Nostrum.Api.Message.create(interaction.channel_id, content)
+    else
+      Nostrum.Api.Interaction.create_response(interaction, %{
+        type: 4,
+        data: %{content: content, flags: 64}
+      })
+    end
   end
 
   def reply_with_components(interaction, content, components) do
-    Nostrum.Api.Interaction.create_response(interaction, %{
-      type: 4,
-      data: %{content: content, components: components}
-    })
+    if Map.get(interaction, :mock) do
+      Nostrum.Api.Message.create(interaction.channel_id, %{content: content, components: components})
+    else
+      Nostrum.Api.Interaction.create_response(interaction, %{
+        type: 4,
+        data: %{content: content, components: components}
+      })
+    end
   end
 
   defp get_option(interaction, name) do
-    options = get_in(interaction, [Access.key(:data), Access.key(:options)]) || []
-    opt = Enum.find(options, &(&1.name == name))
-    opt && opt.value
+    if Map.get(interaction, :mock) do
+      Map.get(interaction.args, name)
+    else
+      options = get_in(interaction, [Access.key(:data), Access.key(:options)]) || []
+      opt = Enum.find(options, &(&1.name == name))
+      opt && opt.value
+    end
   end
 
   defp get_subcommand(interaction) do

@@ -31,9 +31,15 @@ defmodule DunderMifflinBot.Consumer do
   def handle_event(_event), do: :noop
 
   defp handle_message(message) do
-    case CharacterSession.get_session(message.channel_id, message.author.id) do
-      nil -> handle_twss(message)
-      session -> handle_character_reply(message, session)
+    case DunderMifflinBot.Commands.Prefix.parse(message) do
+      nil ->
+        case CharacterSession.get_session(message.channel_id, message.author.id) do
+          nil -> handle_twss(message)
+          session -> handle_character_reply(message, session)
+        end
+
+      mock_interaction ->
+        Router.handle(mock_interaction)
     end
   end
 
