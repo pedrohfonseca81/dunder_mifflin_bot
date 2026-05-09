@@ -304,7 +304,7 @@ defmodule DunderMifflinBot.Commands.Router do
   defp run_character(interaction, character_module, context, _command, locale) do
     user_id = interaction.member.user_id
 
-    Nostrum.Api.Interaction.create_response(interaction, %{type: 5, data: %{flags: 64}})
+    defer_ephemeral(interaction)
 
     with :ok <- Permissions.check(interaction, :everyone),
          {:ok, response} <- Character.generate(character_module, context, locale) do
